@@ -1,0 +1,13 @@
+version: '2'
+services:
+  app:
+    build: .
+    ports:
+        - 5000:5000
+    container_name: alexa_donkey
+    environment:
+      - TZ=Asia/Hong_Kong
+      - VIRTUAL_HOST=donkey_alexa_backend
+    volumes:
+      - ./app:/app
+    restart: always
