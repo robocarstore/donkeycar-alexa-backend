@@ -10,6 +10,6 @@ RUN pip3 install flask
 RUN mkdir /app
 WORKDIR /app
 
-EXPOSE 5000
+EXPOSE 80
 
-CMD flask run --host=0.0.0.0
+CMD flask run --host=0.0.0.0 --port=80
