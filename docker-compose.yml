@@ -9,3 +9,8 @@ services:
     volumes:
       - ./app:/app
     restart: always
+
+networks:
+    default:
+        external:
+        name: docker04-network
