@@ -1,7 +1,7 @@
 import requests
 
 # defining the api-endpoint
-API_ENDPOINT = "http://alexa.proactivesystem.com.hk/command"
+API_ENDPOINT = "http://alexa.proactivesystem.com.hk"
 API_ENDPOINT = "http://localhost:5000"
 
 
@@ -34,11 +34,11 @@ def test_get_device_code():
 
     r = requests.get(url = url)
     rData = r.json()
-    assert rData['deviceCode'] == '52523716'
+    assert rData['deviceCode'] == '523716'
 
 
 def test_get_command():
-    deviceCode = '52523716'
+    deviceCode = '523716'
     url = "{}/{}".format(API_ENDPOINT, 'command')
 
     params = {
@@ -52,7 +52,7 @@ def test_get_command():
 
 
 def test_get_command_new_device_code():
-    deviceCode = '12345678'
+    deviceCode = '123456'
     url = "{}/{}".format(API_ENDPOINT, 'command')
 
     params = {
@@ -70,6 +70,10 @@ def test_get_command_empty_device_code():
     rData = r.json()
     assert rData['statusCode'] == 500
 
+
+def test_add_space_in_str():
+    s = "123456"
+    assert "1 2 3 4 5 6" == " ".join(s)
 
 
 

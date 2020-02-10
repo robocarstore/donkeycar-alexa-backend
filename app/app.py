@@ -41,7 +41,7 @@ def command():
         return result
 
 
-# This endpoint simply an Alexa device id (normally very long) to a numeric string (max 8 digits) which is easier to pass along
+# This endpoint simply an Alexa device id (normally very long) to a numeric string (max 6 digits) which is easier to pass along
 @app.route('/device_code/<deviceId>', methods=['GET'])
 def device_code(deviceId):
     deviceCode = getDeviceCodeByDeviceId(deviceId)
@@ -51,5 +51,5 @@ def device_code(deviceId):
 
 def getDeviceCodeByDeviceId(deviceId):
     # https://stackoverflow.com/questions/16008670/how-to-hash-a-string-into-8-digits
-    deviceCode = int(hashlib.sha256(deviceId.encode('utf-8')).hexdigest(), 16) % 10**8
+    deviceCode = int(hashlib.sha256(deviceId.encode('utf-8')).hexdigest(), 16) % 10**6
     return str(deviceCode)
