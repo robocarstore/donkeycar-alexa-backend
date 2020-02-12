@@ -5,7 +5,7 @@ services:
     container_name: alexa_donkey
     environment:
       - TZ=Asia/Hong_Kong
-      - VIRTUAL_HOST=alexa.proactivesystem.com.hk
+      - VIRTUAL_HOST=alexa.robocarstore.com
     volumes:
       - ./app:/app
     restart: always

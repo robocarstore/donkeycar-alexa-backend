@@ -1,8 +1,8 @@
 import requests
 
 # defining the api-endpoint
-API_ENDPOINT = "http://alexa.proactivesystem.com.hk"
-API_ENDPOINT = "http://localhost:5000"
+API_ENDPOINT = "http://alexa.robocarstore.com"
+# API_ENDPOINT = "http://localhost:5000"
 
 
 
